@@ -22,7 +22,7 @@ class User < ApplicationRecord
   def check_all_events_finished
     now = Time.zone.now
 
-    if created_events.where('? < end_at', now).exists?
+    if created_events.where(':now < end_at', now: now).exists?
       errors[:base] << '公開中の未終了イベントが存在します。'
     end
 
