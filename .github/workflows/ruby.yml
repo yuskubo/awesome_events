@@ -19,6 +19,5 @@ jobs:
         bin/rails db:create
         bin/rails db:migrate
         bin/yarn install
-        bundle exec rspec
         
         
